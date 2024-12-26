@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tech-list>
+    <!-- List NFC technologies that your app supports -->
+    <tech name="android.nfc.tech.NfcA" />
+    <tech name="android.nfc.tech.NfcB" />
+    <tech name="android.nfc.tech.NfcF" />
+    <tech name="android.nfc.tech.NfcV" />
+    <tech name="android.nfc.tech.Ndef" />
+    <!-- Add more technologies if needed -->
+</tech-list>

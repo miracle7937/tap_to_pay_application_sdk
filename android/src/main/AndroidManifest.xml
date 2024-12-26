@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.tap_to_pay_plugin">
+
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+
+    <application>
+        <activity
+            android:name=".TransactionActivity"
+            android:exported="false"
+            android:label="Test APP"
+            android:theme="@style/Theme.AppCompat.Light"
+            />
+        <activity
+            android:name="com.e.tapready.Tprd_Amount"
+            android:exported="false" />
+        <activity
+            android:name="com.e.tapready.Tprd_PresentCard"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.nfc.action.TECH_DISCOVERED" />
+                <action android:name="android.nfc.action.TAG_DISCOVERED" />
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.nfc.action.TECH_DISCOVERED"
+                android:resource="@xml/nfc_tech_list" />
+        </activity>
+        <activity
+            android:name="com.e.tapready.Tprd_EnterPin"
+            android:exported="false" />
+        <activity
+            android:name="com.e.tapready.Tprd_NfcReaderActivity"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.nfc.action.TECH_DISCOVERED" />
+                <action android:name="android.nfc.action.TAG_DISCOVERED" />
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.nfc.action.TECH_DISCOVERED"
+                android:resource="@xml/nfc_tech_list" />
+        </activity>
+        <activity
+            android:name="com.e.tapready.Tprd_Tapmain"
+            android:exported="false" />
+    </application>
+
+</manifest>
